@@ -14,4 +14,8 @@ typedef struct {
     int quantidade;
 } Produto;
 
+void exibir_menu(void);
+void listar_produtos(Produto lista[], int total);
+float calcular_total(Produto lista[], int total);
+
 #endif
