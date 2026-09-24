@@ -5,7 +5,6 @@
 #define ESTOQUE_MINIMO 5
 #define TAXA_PADRAO 0.10
 #define TAXA_DESCONTO 0.05
-#define TAXA_JUROS 0.08
 
 typedef struct {
     int id;
@@ -17,6 +16,5 @@ typedef struct {
 } Produto;
 
 float aplicar_desconto(float total);
-float aplicar_juros(float total);
 
 #endif
