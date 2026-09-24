@@ -16,10 +16,11 @@ void listar_produtos(Produto lista[], int total) {
 
     for (int i = 0; i < total; i++) {
         printf(
-            "ID: %d | Cod: %s | Categoria: %s | Nome: %s | Preco: R$ %.2f | Qtd: %d\n",
+            "ID: %d | Categoria: %s | Cod. Barras: %s | "
+            "Nome: %s | Preco: R$ %.2f | Qtd: %d\n",
             lista[i].id,
-            lista[i].codigo_barras,
             lista[i].categoria,
+            lista[i].codigo_barras,
             lista[i].nome,
             lista[i].preco,
             lista[i].quantidade
@@ -28,7 +29,7 @@ void listar_produtos(Produto lista[], int total) {
 }
 
 float calcular_total(Produto lista[], int total) {
-    float soma = 0.0;
+    float soma = 0.0f;
 
     for (int i = 0; i < total; i++) {
         soma += lista[i].preco * lista[i].quantidade;
@@ -48,16 +49,16 @@ int main(void) {
 
     estoque[0].id = 1;
     strcpy(estoque[0].categoria, "Papelaria");
-    strcpy(estoque[0].codigo_barras, "7890001");
+    strcpy(estoque[0].codigo_barras, "789000000001");
     strcpy(estoque[0].nome, "Caderno");
-    estoque[0].preco = 15.50;
+    estoque[0].preco = 15.50f;
     estoque[0].quantidade = 10;
 
     estoque[1].id = 2;
-    strcpy(estoque[1].categoria, "Escritorio");
-    strcpy(estoque[1].codigo_barras, "7890002");
+    strcpy(estoque[1].categoria, "Papelaria");
+    strcpy(estoque[1].codigo_barras, "789000000002");
     strcpy(estoque[1].nome, "Caneta");
-    estoque[1].preco = 3.00;
+    estoque[1].preco = 3.00f;
     estoque[1].quantidade = 50;
 
     int opcao = -1;
@@ -66,11 +67,11 @@ int main(void) {
         exibir_menu();
 
         if (scanf("%d", &opcao) != 1) {
+            printf("\nEntrada invalida!\n");
             break;
         }
 
         switch (opcao) {
-
             case 1:
                 listar_produtos(estoque, total_produtos);
                 break;
